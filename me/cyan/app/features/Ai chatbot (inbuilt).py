@@ -1,18 +1,13 @@
-try:
-    from colors_app import *
-    from me.cyan.app.gui.animations.style import Slow
-    from gui.banner import Fade
-    # colors
-    import json  # json writing
-    import requests  # web requests/packets
-    import time
-    import sys
-except Exception as e:
-    print(f'error: {e}')
-    print('In: Ai chatbot(inbuilt).py')
+from style import *
+import json  #json writing
+import requests #web requests/packets
+import time
+import sys
+
+#animation
 
 #banner
-AI =  Slow(r""" 
+AI =  MainColor2(r""" 
        .---:                                                                             .:--:.     
      :*******-                                                                         .*******=.   
     :*********-                     .:::::::::::::::::::.:.:::....                    .*********+.  
@@ -67,7 +62,7 @@ AI =  Slow(r"""
 
 """)
 
-# api keys for auth 
+# api keys for auth
 #get keys at: https://aimlapi.com/
 ##############################################################################################################
 api_keys = {
@@ -142,6 +137,5 @@ def Cyan_AI():
         send_message(user_input)
 
 Cyan_AI()
-
 
 

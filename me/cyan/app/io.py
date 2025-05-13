@@ -6,8 +6,7 @@ try:
     from me.cyan.app.gui.menu import Menu
     from me.cyan.app.gui.banner import banner, Fade
     import datetime
-    from me.cyan.app.settings import Credits, guide, welcome
-    from settings.Credits import Credits
+    from settings.Credits import *
 except Exception as e:
     print(e)
     print('in: io.py')
