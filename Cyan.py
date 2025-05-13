@@ -1,7 +1,7 @@
 try:
     from me.cyan.app.gui.banner import *
     from me.cyan.app.features import *
-    from me.cyan.app.settings import *
+  #  from me.cyan.app.settings import *
     from me.cyan.app.gui.menu import Menu, Slow
     from me.cyan.app.io import AppIo
 #catch module load error

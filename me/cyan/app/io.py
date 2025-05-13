@@ -6,6 +6,8 @@ try:
     from me.cyan.app.gui.menu import Menu
     from me.cyan.app.gui.banner import banner, Fade
     import datetime
+    from me.cyan.app.settings import Credits, guide, welcome
+    from settings.Credits import Credits
 except Exception as e:
     print(e)
     print('in: io.py')
@@ -88,7 +90,7 @@ class AppIo(object
         # checks input e.g if input is c execute credits function
         try:
             if choice in ['C', 'credits', 'author', 'c', 'CREDITS', 'Credits', 'CreDIts']:
-                credits()
+                Credits().show_credits()
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
             if choice in ['Help', 'H', 'h', 'HELP', 'HeLp', '?', 'help']:
                 #help()
