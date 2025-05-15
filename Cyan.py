@@ -11,7 +11,7 @@ except Exception as e:
 
 import os
 
-#parent class
+#app main class
 class Main:
     def main(self,
 ):
