@@ -34,6 +34,7 @@ class Main:
             Slow(MainColor(menu_instance.menu1))
             AppIo(object)
 
+
 #call main function when class is called
 
 

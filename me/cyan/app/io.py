@@ -123,18 +123,26 @@ class AppIo(object
         # checks input e.g if input is c execute credits function
         try:
             if choice in ['c', 'credits', 'creds']:
+                Slow(MainColor(
+                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                 Credits()
+                Slow(MainColor(
+                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 return
             if choice in ['Gui', 'gui','swap', 'enable_gui', 'exec_gui', "g"]:
+                Slow(MainColor(
+                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                 print(f'{purple}FEATURE IS NOT OUT YET AND STILL IN DEVELOPMENT')
-                input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                self.continuemain()
+                Slow(MainColor(
+                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                Slow(input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset))
                 return
             if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
                 sys.exit()
                 return
             if choice in ['R', 'r', 'reset', 'refresh', 'clear']:
+                Slow(MainColor('┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 if os_name == "Windows":
                     os.system("cls")
@@ -149,28 +157,43 @@ class AppIo(object
 
                 if os.path.exists(script_path):
                     os.system(f"python \"{script_path}\"")
+                    Slow(MainColor(
+                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     input(
                         f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 else:
+                    Slow(MainColor(
+                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     print(f"{red}Error: {blue}{script_path} {red}not found! -_-")
+                    Slow(MainColor(
+                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)# if file not found
 
             elif '0' + choice in self.options and self.options['0' + choice]:  # if option entered starts with 0
                 script_path = os.path.join(script_folder, f"{self.options['0' + choice]}.py")
 
                 if os.path.exists(script_path):
+                    Slow(MainColor(
+                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     os.system(f"python \"{script_path}\"")
+                    Slow(MainColor(
+                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     input(
                         f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 else:
+
                     print(f"Error: {script_path} not found!")
                     input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)# if not found
 
             else:
-               print(f"\n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !", reset)
-               time.sleep(0.69)
+
+               Slow(MainColor(f"""┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃
+               \n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !""" + reset))
+               time.sleep(1)
 
               # error
         # Prints error message e.g a filepath is not found in code or could not find a specific module.
         except Exception as e:
+            Slow(MainColor(
+                '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
             input(f"Error: {e}")

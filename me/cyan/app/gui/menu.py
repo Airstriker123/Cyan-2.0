@@ -64,9 +64,9 @@ class Menu:
 
         # menu display
         self.ribbon = "┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃"
-        self.menu1 = f"""{self.ribbon} ┌─{self.option_site_txt}                                                                                             {self.option_next_txt}─┐
+        self.menu1 = f""" ┌─{self.option_site_txt}                                                                                             {self.option_next_txt}─┐
  ├─{self.option_info_txt  }   ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │
- └─┬─────────┤ General tools   ├─────────┬──────────────┤ Study ├──────────────┬────────────┤ Utilities ├────────────┴─
+ └─┬─────────┤ General tools   ├─────────┬──────────────┤ Study ├──────────────┬────────────┤ Utilities ├────────────┴─┃
    │         └─────────────────┘         │              └───────┘              │            └───────────┘
    ├─ {self.option_01_txt                }├─ {self.option_07_txt                }├─ {self.option_14_txt}
    ├─ {self.option_02_txt                }├─ {self.option_08_txt                }├─ {self.option_15_txt}
