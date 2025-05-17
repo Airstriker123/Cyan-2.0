@@ -11,8 +11,13 @@ except Exception as e:
 
 import os
 
-#parent class
+#main class
 class Main:
+    '''Brings app together prints frontend (banner, menu)
+    and also executes io script to manage input/output from user.
+
+   - No further use
+   '''
     def main(self,
 ):
         while True:
@@ -28,5 +33,5 @@ class Main:
         self.main()
 
 Main(
-    #run
+    #run app
 )

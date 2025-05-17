@@ -80,27 +80,37 @@ class AppIo(object
                 os_name = "Linux"
             else:
                 os_name = "Unknown"
-        except:
-            os_name = "???"  # Default value if the OS can't be determined
+        except Exception as e:
+            print(f'{red}error:{purple} {e}')  # Default value if the OS can't be determined
         # input from user
-        choice = input(
-            f""" {lc}┌──({purple}{username_pc}{lc}@cyan{lc})─{lc}[{red}~/{os_name}/Menu-{menu_number}{lc}]
- {lc}└─{lc}> {reset}""")
+        choice = (input
+(
+            f""" {lc}┌──({
+            purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{menu_number}{lc}]
+ {lc}└─{lc}> {reset       
+}""")
+        )
         # checks input e.g if input is c execute credits function
         try:
             if choice in ['C', 'credits', 'author', 'c', 'CREDITS', 'Credits', 'CreDIts']:
                 Credits().show_credits()
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                return
             if choice in ['Help', 'H', 'h', 'HELP', 'HeLp', '?', 'help']:
                 #help()
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 self.continuemain()
+                return
             if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
                 sys.exit()
+                return
             if choice in ['R', 'r', 'reset', 'refresh', 'clear']:
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                os.system('cls')
-                #self.main()
+                if os_name == "Windows":
+                    os.system("cls")
+                elif os_name == "Linux":
+                    os.system("clear")
+                return
             # script path for all my modules
             script_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "features"))
             # execute option entered condition
@@ -127,11 +137,10 @@ class AppIo(object
                     input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)# if not found
 
             else:
-                print(f"\n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !", reset)
-                time.sleep(0.5)
+               print(f"\n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !", reset)
+               time.sleep(0.5)
 
               # error
         # Prints error message e.g a filepath is not found in code or could not find a specific module.
         except Exception as e:
             input(f"Error: {e}")
-
