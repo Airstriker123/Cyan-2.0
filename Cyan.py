@@ -1,8 +1,5 @@
 import os
-import ctypes
-import atexit
-import signal
-import sys
+import subprocess
 try:
     from me.cyan.app.gui.banner import *
     from me.cyan.app.features import *
@@ -12,8 +9,10 @@ except Exception as e:
     print(f'error: {e}')
     print('In: Cyan.py')
 
-# Launch background task
-os.system(r'python me\cyan\app\settings\cyantaskbg.py')
+#background tasks
+os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
+os.system(r'start me\cyan\app\settings\cyantaskbgremove.pyw')
+
 # Main application class
 class Main:
     def __init__(self):
