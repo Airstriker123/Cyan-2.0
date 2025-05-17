@@ -11,22 +11,32 @@ except Exception as e:
 
 import os
 
-#parent class
+#main class
 class Main:
+    '''
+    Executes all other modules to open and display app gui (banner, menu)
+    and also executes the backend of application io.py to handle input/output
+    - No further use unless major changes
+    - Only change code if adding something new to pre execution without user needing to input
+    - If added it will execute when app is opened.
+    '''
+
+    def __init__(self,
+                 ):
+        self.main()
     def main(self,
 ):
+
         while True:
             os.system('cls')
             menu_instance = Menu(None)
-            banner(Fade)
+            Banner()
             Slow(MainColor(menu_instance.menu1))
             AppIo(object)
 
 #call main function when class is called
-    def __init__(self,
-):
-        self.main()
+
 
 Main(
-    #run
+    #run app
 )

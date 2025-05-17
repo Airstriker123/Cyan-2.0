@@ -32,7 +32,7 @@ class Menu:
         # Additional menu options
         self.option_next = "Credits"
         self.option_site = "clear"
-        self.option_info = "Help"
+        self.option_info = "gui"
 
         # Formatting the options for display in the menu
         # Using ANSI color codes (cyan and white) to style the text
@@ -60,11 +60,12 @@ class Menu:
         # Formatting special options
         self.option_next_txt = self.option_next + f" {cyan}[{white}C{cyan}]{white}"
         self.option_site_txt = f"{cyan}[{white}R{cyan}]{white} " + self.option_site
-        self.option_info_txt = f"{cyan}[{white}H{cyan}]{white} " + self.option_info
+        self.option_info_txt = f"{cyan}[{white}G{cyan}]{white} " + self.option_info
 
         # menu display
-        self.menu1 = f""" ┌─{self.option_site_txt}                                                                                             {self.option_next_txt}─┐
- ├─{self.option_info_txt  }  ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │
+        self.ribbon = "┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃"
+        self.menu1 = f"""{self.ribbon} ┌─{self.option_site_txt}                                                                                             {self.option_next_txt}─┐
+ ├─{self.option_info_txt  }   ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │
  └─┬─────────┤ General tools   ├─────────┬──────────────┤ Study ├──────────────┬────────────┤ Utilities ├────────────┴─
    │         └─────────────────┘         │              └───────┘              │            └───────────┘
    ├─ {self.option_01_txt                }├─ {self.option_07_txt                }├─ {self.option_14_txt}
@@ -74,7 +75,7 @@ class Menu:
    ├─ {self.option_05_txt                }├─ {self.option_11_txt                }├─ {self.option_18_txt}
    └─ {self.option_06_txt                }├─ {self.option_12_txt                }└─ {self.option_19_txt}
                                          └─ {self.option_13_txt                }
-"""
+{self.ribbon}                                     """
 
 
 

@@ -1,0 +1,2 @@
+python cyan.py
+pause

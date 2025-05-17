@@ -3,31 +3,68 @@ try:
     import sys
     from me.cyan.app.gui.animations.colorama.__init__ import *
     from me.cyan.app.gui.animations.style import *
-    from me.cyan.app.gui.menu import Menu
-    from me.cyan.app.gui.banner import banner, Fade
     import datetime
-    from settings.Credits import *
+    import time
+    import requests
 except Exception as e:
     print(e)
     print('in: io.py')
 
+
+
+class Credits:
+        def __init__(self):
+            self.show_credits()
+        # function to submit feedback.
+
+
+
+        def show_credits(self):
+            Slow(f'''
+{lc}
+╭────────────────────────────────╮
+│ Cyan - Multi-tool for Students │
+╰────────────────────────────────╯
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Developed by: {red}Airstriker{lc}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Lead Developer: {red}Airstriker{lc}
+• GitHub: {cyan}github.com/Airstriker123 🚀{lc}
+• Design & UX: {red}Airstriker {lc}
+• Programming: {red}Airsriker {lc}
+• Tested on {purple}3{lc} computers 💯
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ {purple}Modules Used{lc}   ┃{purple} Use{lc}                                      ┃ {purple}Link{lc}                                            ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ colorama       │ Color support for console text           │ https://pypi.org/project/colorama/              │
+│ pytubefix      │ Download YouTube videos (patched pytube) │ https://github.com/fent/node-ytdl-core          │
+│ pydub          │ Audio processing (conversion, editing)   │ https://github.com/jiaaro/pydub                 │
+│ ffmpeg         │ Multimedia processing (audio/video)      │ https://ffmpeg.org/                             │
+│ imageio        │ Read/write images & videos               │ https://imageio.readthedocs.io/                 │
+│ fade           │ Adds fading effects to text in CLI       │ https://pypi.org/project/fade/                  │
+│ Flask          │ Web framework for Python                 │ https://flask.palletsprojects.com/              │
+│ requests       │ Handles HTTP requests                    │ https://docs.python-requests.org/               │
+│ rich           │ Better CLI app, tables, text formatting  │ https://github.com/Textualize/rich              │
+│ PyExecJS       │ Run JavaScript from Python               │ https://pypi.org/project/PyExecJS/              │
+│ datetime       │ Handles date and time operations         │ https://docs.python.org/3/library/datetime.html │
+│ simplejson     │ Extended JSON handling                   │ https://pypi.org/project/simplejson/            │
+│ jsons          │ Serialize/deserialize JSON data          │ https://pypi.org/project/jsons/                 │
+│ pypi-json      │ Retrieve package metadata from PyPI      │ https://pypi.org/project/pypi-json/             │
+│ textblob       │ NLP (Natural Language Processing)        │ https://pypi.org/project/textblob/              │
+│ pyspellchecker │ Spell checking in Python                 │ https://pypi.org/project/pyspellchecker/        │
+│ sympy          │ Symbolic mathematics library             │ https://www.sympy.org/                          │
+└────────────────┴──────────────────────────────────────────┴─────────────────────────────────────────────────┘
+
+{lc}Thank you for using Cyan! 
+{green}Be sure to Star this project on Github!
+
+            ''')
+
+
+
+
 class AppIo(object
 ):
-
-    def continuemain(self):
-        BEFORE = f'{red}[{white}'
-        AFTER = f'{red}]'
-        INFO = f'{BEFORE}!{AFTER} |'
-        menu_number = '1'  # menu number
-        username_pc = os.getlogin()
-        ERROR = f'{BEFORE}x{AFTER} |'
-
-        while True:
-            Slow(banner)
-            menu_instance = Menu(None)
-            Slow(MainColor(menu_instance.menu1))
-            AppIo(object)
-
     # Get the current time formatted as HH:MM:SS
     def current_time_hour(self):
         return datetime.datetime.now().strftime('%H:%M:%S')
@@ -53,11 +90,6 @@ class AppIo(object
         self.option_17 = "Physics Formula Sheet"
         self.option_18 = "Spelling & Grammar Check"  # Uses an API
         self.option_19 = "Recommended Study Websites"
-
-        # Additional menu options
-        self.option_next = "Credits"
-        self.option_site = "clear"
-        self.option_info = "Help"
         self.options = \
         {
                 '01': self.option_01, '02': self.option_02, '03': self.option_03, '04': self.option_04,
@@ -85,19 +117,17 @@ class AppIo(object
         # input from user
         choice = (input
 (
-            f""" {lc}┌──({
-            purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{menu_number}{lc}]
- {lc}└─{lc}> {reset       
-}""")
-        )
+            f""" {lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{menu_number}{lc}]
+ {lc}└─{lc}> {reset}""").lower()
+)
         # checks input e.g if input is c execute credits function
         try:
-            if choice in ['C', 'credits', 'author', 'c', 'CREDITS', 'Credits', 'CreDIts']:
-                Credits().show_credits()
+            if choice in ['c', 'credits', 'creds']:
+                Credits()
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 return
-            if choice in ['Help', 'H', 'h', 'HELP', 'HeLp', '?', 'help']:
-                #help()
+            if choice in ['Gui', 'gui','swap', 'enable_gui', 'exec_gui', "g"]:
+                print(f'{purple}FEATURE IS NOT OUT YET AND STILL IN DEVELOPMENT')
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 self.continuemain()
                 return
@@ -138,7 +168,7 @@ class AppIo(object
 
             else:
                print(f"\n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !", reset)
-               time.sleep(0.5)
+               time.sleep(0.69)
 
               # error
         # Prints error message e.g a filepath is not found in code or could not find a specific module.

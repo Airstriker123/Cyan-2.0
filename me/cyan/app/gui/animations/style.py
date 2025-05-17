@@ -17,7 +17,7 @@ def MainColor(menu1
 
     colors += list(reversed(colors[:-1]))  # Mirroring the gradient for a smooth effect
 
-    gradient_chars = '┌─┬│└┐┘┴├┤▓▒░█▄▌▀'  # Characters to apply gradient
+    gradient_chars = '┌─┬│└┐┘┴├┤▓▒░█▄▌▀┃━'  # Characters to apply gradient
     num_colors = len(colors)
 
     def text_color(r, g, b
