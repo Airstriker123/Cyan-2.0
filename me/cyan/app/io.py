@@ -183,6 +183,7 @@ class AppIo(object
                 Slow(input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset))
                 return
             if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
+                os.system(r'python me\\cyan\\app\\settings\\cyantaskbgremove.py')
                 sys.exit()
                 return
             if choice in ['R', 'r', 'reset', 'refresh', 'clear']:
