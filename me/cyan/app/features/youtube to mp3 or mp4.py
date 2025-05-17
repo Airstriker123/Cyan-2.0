@@ -2,7 +2,7 @@ import os
 from pytubefix import YouTube #pytube for downloading videos
 from pytubefix.cli import on_progress #pytube for downloading videos
 from pydub import AudioSegment #pydub for mp3 videos
-from colors_app import *
+from style import *
 import requests
 import time
 

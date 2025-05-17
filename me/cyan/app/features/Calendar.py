@@ -1,7 +1,5 @@
 import os
-from colors_app import *
-import webbrowser
-from colors_app import *
+from style import *
 import time
 
 

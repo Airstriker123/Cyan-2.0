@@ -1,7 +1,6 @@
-from colors_app import *
+from style import *
 import os
 import webbrowser
-from colors_app import *
 import time
 
 #animation
