@@ -12,6 +12,8 @@ except Exception as e:
 #background tasks
 os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
 os.system(r'start me\cyan\app\settings\cyantaskbgremove.pyw')
+#if you have a newer windows verion
+os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
 
 # Main application class
 class Main:
