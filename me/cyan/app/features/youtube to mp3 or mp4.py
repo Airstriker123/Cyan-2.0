@@ -1,7 +1,7 @@
 import os
-from pytubefix import YouTube #pytube for downloading videos
-from pytubefix.cli import on_progress #pytube for downloading videos
-from pydub import AudioSegment #pydub for mp3 videos
+from modules.pytubefix.__init__ import YouTube #pytube for downloading videos
+from modules.pytubefix.cli import on_progress #pytube for downloading videos
+from modules.pydub import AudioSegment #pydub for mp3 videos
 from style import *
 import requests
 import time

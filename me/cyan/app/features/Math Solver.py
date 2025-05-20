@@ -1,7 +1,13 @@
 # Import necessary modules
 from style import *  # Importing custom colors module
+import os
 import time  # For adding delays in text output
-import sympy as sp  # For symbolic mathematical computations
+try:
+    import sympy as sp  # For symbolic mathematical computations
+except:
+    print(f'{lc}please wait installing package...')
+    os.system('pip install sympy')
+    import sympy as sp
 import re  # For regular expressions (used to modify input expressions)
 import math  # For mathematical functions like factorial
 
