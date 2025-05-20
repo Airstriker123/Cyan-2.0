@@ -6,7 +6,7 @@ try:
     import sympy as sp  # For symbolic mathematical computations
 except:
     print(f'{lc}please wait installing package...')
-    os.system('pip install sympy')
+    os.system('pip install sympy') #check
     import sympy as sp
 import re  # For regular expressions (used to modify input expressions)
 import math  # For mathematical functions like factorial
