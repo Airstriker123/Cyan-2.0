@@ -11,6 +11,7 @@ except Exception as e:
     print(f'error: {e}')
     print('In: Cyan.py')
 
+os.system('title Cyan2.0')
 #background tasks
 os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
 os.system(r'python me\cyan\app\settings\cyantaskbgremove.pyw')
