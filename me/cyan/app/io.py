@@ -7,10 +7,10 @@ try:
     import time
     import requests
 except Exception as e:
-    print(e)
+    print(e) 
     print(f'{e}\n in: io.py')
 
-
+# can now use $
 
 class Credits:
         def __init__(self):
