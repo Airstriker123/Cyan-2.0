@@ -4,6 +4,11 @@ import sys
 import subprocess
 import time
 import sys
+try:
+    import pygetwindow as gw
+except:
+    os.system('pip install pygetwindow')
+    import pygetwindow as gw
 
 
 '''Terminal app gif remove'''
@@ -60,7 +65,7 @@ def is_script_running(script_name: str) -> bool:
 
 
 while True:
-    if is_script_running("cyan.py"):
+    if "Cyan2.0" in [w.title for w in gw.getWindowsWithTitle("Cyan2.0")]:
         print("The script cyan.py is running!")
     else:
         print("cyan.py is NOT running!")
@@ -68,7 +73,7 @@ while True:
         change_windows_terminal_background(image_path)
         break
 
-    time.sleep(1)  # Wait before checking again
+    time.sleep(3)  # Wait before checking again
 
 
 

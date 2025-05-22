@@ -14,7 +14,7 @@ except Exception as e:
 os.system('title Cyan2.0')
 #background tasks
 os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
-os.system(r'python me\cyan\app\settings\cyantaskbgremove.pyw')
+os.system(r'start me\cyan\app\settings\cyantaskbgremove.pyw')
 isrunning = True
 if isrunning == True:
     os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
