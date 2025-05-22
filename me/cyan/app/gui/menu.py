@@ -28,11 +28,17 @@ class Menu:
         self.option_17 = "Physics Formula Sheet"
         self.option_18 = "Spelling & Grammar Check"  # Uses an API
         self.option_19 = "Recommended Study Websites"
+        self.option_20 = "Clear temp files"
+        self.option_21 = "Empty Recycle Bin"
+        self.option_22 = "Smart File Organizer"
+        self.option_23 = "Auto website startup"
+        self.option_24 = "Auto email (template)"
+        self.option_25 = "Execute custom macros"
 
         # Additional menu options
-        self.option_next = "Credits"
-        self.option_site = "clear"
-        self.option_info = "gui"
+        self.option_next = f"{green}Next"
+        self.option_site = "Credits"
+        self.option_back = f"{red}back"
 
         # Formatting the options for display in the menu
         # Using ANSI color codes (cyan and white) to style the text
@@ -56,16 +62,23 @@ class Menu:
         self.option_17_txt = f"{cyan}[{white}17{cyan}]{white} " + self.option_17.ljust(30)[:30].replace("-", " ")
         self.option_18_txt = f"{cyan}[{white}18{cyan}]{white} " + self.option_18.ljust(30)[:30].replace("-", " ")
         self.option_19_txt = f"{cyan}[{white}19{cyan}]{white} " + self.option_19.ljust(30)[:30].replace("-", " ")
+        self.option_20_txt = f"{cyan}[{white}20{cyan}]{white} " + self.option_20
+        self.option_21_txt = f"{cyan}[{white}21{cyan}]{white} " + self.option_21
+        self.option_22_txt = f"{cyan}[{white}22{cyan}]{white} " + self.option_22
+        self.option_23_txt = f"{cyan}[{white}23{cyan}]{white} " + self.option_23
+        self.option_24_txt = f"{cyan}[{white}24{cyan}]{white} " + self.option_24
+        self.option_25_txt = f"{cyan}[{white}25{cyan}]{white} " + self.option_25
 
         # Formatting special options
-        self.option_next_txt = self.option_next + f" {cyan}[{white}C{cyan}]{white}"
-        self.option_site_txt = f"{cyan}[{white}R{cyan}]{white} " + self.option_site
-        self.option_info_txt = f"{cyan}[{white}G{cyan}]{white} " + self.option_info
+        self.option_next_txt = self.option_next + f" {cyan}[{green}N{cyan}]{white}"
+        self.option_site_txt = f"{cyan}[{yellow}C{cyan}]{white} " + self.option_site
+        self.option_back_txt= f"{cyan}[{red}B{cyan}]{white} " + self.option_back
+
 
         # menu display
         self.ribbon = "┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃"
-        self.menu1 = f""" ┌─{self.option_site_txt}                                                                                             {self.option_next_txt}─┐
- ├─{self.option_info_txt  }   ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │
+        self.menu1 = f""" ┌─{self.option_site_txt}                                                                                              {self.option_next_txt}─┐
+ ├─{self.option_back_txt  }  ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │ 
  └─┬─────────┤ General tools   ├─────────┬──────────────┤ Study ├──────────────┬────────────┤ Utilities ├────────────┴─┃
    │         └─────────────────┘         │              └───────┘              │            └───────────┘
    ├─ {self.option_01_txt                }├─ {self.option_07_txt                }├─ {self.option_14_txt}
@@ -76,6 +89,25 @@ class Menu:
    └─ {self.option_06_txt                }├─ {self.option_12_txt                }└─ {self.option_19_txt}
                                          └─ {self.option_13_txt                }
 {self.ribbon}                                     """
+
+        self.menu2 = f"""█┣━{self.option_back_txt}                                                                                                  {self.option_next_txt}┣━█
+┃                                                                                                                      ┃
+┗━━█░───────┤{purple}[Automation]├────────░█───────┤{red}[System monitor]├────────░█━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+   ┃                               ┃
+   ┣━${self.option_20_txt}        ┣━                 
+   ┣━${self.option_21_txt}       ┣━
+   ┣━${self.option_22_txt}    ┣━
+   ┣━${self.option_23_txt}    ┣━
+   ┣━${self.option_24_txt}   ┣━
+   ┣━${self.option_25_txt}   ┣━    
+        
+"""
+
+
+
+
+
+
 
 
 

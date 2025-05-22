@@ -166,6 +166,10 @@ class AppIo(object
 )
         # checks input e.g if input is c execute credits function
         try:
+            if choice in ['n', 'next', 'menunext', 'menu_next']:
+                return
+            if choice in ['back', 'b', 'menubefore', 'menu_back']:
+                return
             if '$' in choice:
                 new_choice = choice.replace('$', '')
                 # Now use the cleaned input
@@ -180,25 +184,9 @@ class AppIo(object
                     '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                 input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
                 return
-            if choice in ['Gui', 'gui','swap', 'enable_gui', 'exec_gui', "g"]:
-                Slow(MainColor(
-                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                print(f'{purple}FEATURE IS NOT OUT YET AND STILL IN DEVELOPMENT')
-                Slow(MainColor(
-                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                Slow(input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset))
-                return
             if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
                 os.system(r'python me\\cyan\\app\\settings\\cyantaskbgremove.py')
                 sys.exit()
-                return
-            if choice in ['R', 'r', 'reset', 'refresh', 'clear']:
-                Slow(MainColor('┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                if os_name == "Windows":
-                    os.system("cls")
-                elif os_name == "Linux":
-                    os.system("clear")
                 return
             # script path for all my modules
             script_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "features"))

@@ -13,11 +13,8 @@ except Exception as e:
 
 os.system('title Cyan2.0')
 #background tasks
-os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
+os.system(r'start me\cyan\app\settings\cyantaskbg.pyw')
 os.system(r'start me\cyan\app\settings\cyantaskbgremove.pyw')
-isrunning = True
-if isrunning == True:
-    os.system(r'python me\cyan\app\settings\cyantaskbg.pyw')
 
 
 welcome_flag_path = os.path.join("me", "cyan", "app", "settings", "Welcome_complete.txt")
@@ -35,7 +32,7 @@ class Main:
             os.system('cls')
             menu_instance = Menu(None)
             Banner()
-            Slow(MainColor(menu_instance.menu1))
+            Slow(MainColor(menu_instance.menu2))
             AppIo(object)
 # if welcome_complete does not exist in path welcome user to app
 if not os.path.exists(welcome_flag_path):
