@@ -166,6 +166,12 @@ class AppIo(object
 )
         # checks input e.g if input is c execute credits function
         try:
+            if '$' in choice:
+                new_choice = choice.replace('$', '')
+                # Now use the cleaned input
+                os.system(new_choice.strip())
+                input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                return
             if choice in ['c', 'credits', 'creds']:
                 Slow(MainColor(
                     '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
