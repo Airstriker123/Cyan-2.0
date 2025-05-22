@@ -7,6 +7,8 @@ import sys
 try:
     import pygetwindow as gw
 except:
+    print('IGNORE BACKGROUND PROCESS!')
+    print('This terminal will close on its own!')
     os.system('pip install pygetwindow')
     import pygetwindow as gw
 
