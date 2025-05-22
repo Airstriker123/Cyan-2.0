@@ -8,7 +8,7 @@ try:
     import requests
 except Exception as e:
     print(e)
-    print('in: io.py')
+    print(f'{e}\n in: io.py')
 
 
 
