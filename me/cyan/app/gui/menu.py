@@ -34,6 +34,13 @@ class Menu:
         self.option_23 = "Auto website startup"
         self.option_24 = "Auto email (template)"
         self.option_25 = "Execute custom macros"
+        self.option_26 = "Hardware Monitor (CLI HUD)"
+        self.option_27 = "Port Scanner (Local)"
+        self.option_28 = "Launch app (installed)"
+        self.option_29 = "System info"
+        self.option_30 = "Wifi Troubleshooter"
+        self.option_31 = "shutdown computer"
+
 
         # Additional menu options
         self.option_next = f"{green}Next"
@@ -68,6 +75,12 @@ class Menu:
         self.option_23_txt = f"{cyan}[{white}23{cyan}]{white} " + self.option_23
         self.option_24_txt = f"{cyan}[{white}24{cyan}]{white} " + self.option_24
         self.option_25_txt = f"{cyan}[{white}25{cyan}]{white} " + self.option_25
+        self.option_26_txt = f"{cyan}[{white}26{cyan}]{white} " + self.option_26
+        self.option_27_txt = f"{cyan}[{white}27{cyan}]{white} " + self.option_27
+        self.option_28_txt = f"{cyan}[{white}28{cyan}]{white} " + self.option_28
+        self.option_29_txt = f"{cyan}[{white}29{cyan}]{white} " + self.option_29
+        self.option_30_txt = f"{cyan}[{white}30{cyan}]{white} " + self.option_30
+        self.option_31_txt = f"{cyan}[{white}30{cyan}]{white} " + self.option_31
 
         # Formatting special options
         self.option_next_txt = self.option_next + f" {cyan}[{green}N{cyan}]{white}"
@@ -92,14 +105,14 @@ class Menu:
 
         self.menu2 = f"""█┣━{self.option_back_txt}                                                                                                  {self.option_next_txt}┣━█
 ┃                                                                                                                      ┃
-┗━━█░───────┤{purple}[Automation]├────────░█───────┤{red}[System monitor]├────────░█━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┗━━█░───────┤{purple}[Automation]├────────░█───────┤{red}[System tools]├────────░█━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
    ┃                               ┃
-   ┣━${self.option_20_txt}        ┣━                 
-   ┣━${self.option_21_txt}       ┣━
-   ┣━${self.option_22_txt}    ┣━
-   ┣━${self.option_23_txt}    ┣━
-   ┣━${self.option_24_txt}   ┣━
-   ┣━${self.option_25_txt}   ┣━    
+   ┣━${self.option_20_txt}        ┣━{self.option_26_txt}                 
+   ┣━${self.option_21_txt}       ┣━{self.option_27_txt}
+   ┣━${self.option_22_txt}    ┣━{self.option_28_txt}
+   ┣━${self.option_23_txt}    ┣━{self.option_29_txt}
+   ┣━${self.option_24_txt}   ┣━{self.option_30_txt}
+   ┣━${self.option_25_txt}   ┣━{self.option_31_txt}   
         
 """
 
