@@ -183,14 +183,14 @@ class AppIo(object
             # checks input e.g if input is c execute credits function
             try:
                 if choice in ['n', 'next', 'menunext', 'menu_next']:
-                    menu_number = {"1": "2", "2": "3", "3": "1"}.get(self.menu_number, "1")
+                    menu_number = {"1": "2"}.get(self.menu_number, "2")
                     with open(self.menu_path, "w") as file:
                         file.write(menu_number)
                     continue
                     return
 
                 elif choice in ['back', 'b', 'menubefore', 'menu_back']:
-                    menu_number = {"2": "1", "3": "2"}.get(self.menu_number, "1")
+                    menu_number = {"2": "1"}.get(self.menu_number, "1")
                     with open(self.menu_path, "w") as file:
                         file.write(menu_number)
                     continue
