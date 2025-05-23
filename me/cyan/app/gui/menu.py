@@ -123,7 +123,7 @@ class Menu:
    ┣━${self.option_23_txt}    ┣━{self.option_29_txt}                      ┣━{self.option_32_txt}
    ┣━${self.option_24_txt}   ┣━{self.option_30_txt}              ┣━{self.option_33_txt}
    ┣━${self.option_25_txt}   ┣━{self.option_31_txt}                ┣━{self.option_34_txt}
-        
+{self.ribbon}        
 """
         self.menu_number = self.menu1
         with open (self.menu_path, "r") as file:

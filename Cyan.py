@@ -23,15 +23,20 @@ sys.stdout.reconfigure(encoding='utf-8') #better encoding for printing text
 # Main application class
 class Main:
     def __init__(self):
-        self.running = True
+        Main.get_run_status()
         self.main()
+
+    @staticmethod
+    def get_run_status():
+        '''check if first time run script was opened before'''
+        # if welcome_complete does not exist in path welcome user to app
+        if not os.path.exists(welcome_flag_path):
+            first_time_run()
+            with open(welcome_flag_path, "w") as file:
+                file.write("Completed=True")
 
 
     def main(self):
             AppIo(object)
-# if welcome_complete does not exist in path welcome user to app
-if not os.path.exists(welcome_flag_path):
-    first_time_run()
-    with open(welcome_flag_path, "w") as file:
-        file.write("Completed=True")
+
 Main()
