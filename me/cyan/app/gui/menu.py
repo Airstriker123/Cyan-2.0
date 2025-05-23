@@ -1,3 +1,4 @@
+import os
 try:
  from me.cyan.app.gui.animations.style import *
  from me.cyan.app.gui.animations.colorama.__init__ import *
@@ -6,9 +7,9 @@ except Exception as e:
     print('in: menu.py')
 
 class Menu:
-    def __init__(self,
-                 menu1
-):
+    def __init__(self):
+        self.menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
+
         self.option_01 = "Google-Classroom"  # 1
         self.option_02 = "ChatGPT (Web-Version)"  # @
         self.option_03 = "GitHub"  ##@
@@ -97,6 +98,7 @@ class Menu:
 
 
         # menu display
+
         self.ribbon = "┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃"
         self.menu1 = f""" ┌─{self.option_site_txt}                                                                                              {self.option_next_txt}─┐
  ├─{self.option_back_txt  }  ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │ 
@@ -123,6 +125,28 @@ class Menu:
    ┣━${self.option_25_txt}   ┣━{self.option_31_txt}                ┣━{self.option_34_txt}
         
 """
+        self.menu_number = self.menu1
+        with open (self.menu_path, "r") as file:
+           self.menu_number = file.read()
+           if self.menu_number == "1":
+                   self.menu_number = self.menu1
+           elif self.menu_number == "2":
+                   self.menu_number = self.menu2
+           else:
+                   self.menu_number = self.menu1
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,7 +4,7 @@ import sys
 try:
     from me.cyan.app.gui.banner import *
     from me.cyan.app.features import *
-    from me.cyan.app.gui.menu import Menu, Slow
+    from me.cyan.app.gui.menu import *
     from me.cyan.app.io import AppIo
     from me.cyan.app.settings.welcome import *
 except Exception as e:
@@ -16,7 +16,6 @@ os.system('title Cyan2.0')
 os.system(r'start me\cyan\app\settings\cyantaskbg.pyw')
 os.system(r'start me\cyan\app\settings\cyantaskbgremove.pyw')
 
-
 welcome_flag_path = os.path.join("me", "cyan", "app", "settings", "Welcome_complete.txt")
 sys.stdout.reconfigure(encoding='utf-8') #better encoding for printing text
 
@@ -27,12 +26,8 @@ class Main:
         self.running = True
         self.main()
 
+
     def main(self):
-        while self.running:
-            os.system('cls')
-            menu_instance = Menu(None)
-            Banner()
-            Slow(MainColor(menu_instance.menu2))
             AppIo(object)
 # if welcome_complete does not exist in path welcome user to app
 if not os.path.exists(welcome_flag_path):

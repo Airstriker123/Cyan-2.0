@@ -3,6 +3,8 @@ try:
     import sys
     from me.cyan.app.gui.animations.colorama.__init__ import *
     from me.cyan.app.gui.animations.style import *
+    from me.cyan.app.gui.menu import Menu
+    from me.cyan.app.gui.banner import *
     import datetime
     import time
     import requests
@@ -107,6 +109,7 @@ Developed by: {red}Airstriker{lc}
 
 
 
+
 class AppIo(object
 ):
     # Get the current time formatted as HH:MM:SS
@@ -115,6 +118,7 @@ class AppIo(object
 
     def __init__(self, choice
                  ):
+        self.menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
         self.option_01 = "Google-Classroom"  # 1
         self.option_02 = "ChatGPT (Web-Version)"  # @
         self.option_03 = "GitHub"  ##@
@@ -145,7 +149,6 @@ class AppIo(object
         BEFORE = f'{red}[{white}'
         AFTER = f'{red}]'
         INFO = f'{BEFORE}!{AFTER} |'
-        menu_number = '1'  # menu number
         username_pc = os.getlogin()
         ERROR = f'{BEFORE}x{AFTER} |'# get pc name
 
@@ -158,81 +161,110 @@ class AppIo(object
                 os_name = "Unknown"
         except Exception as e:
             print(f'{red}error:{purple} {e}')  # Default value if the OS can't be determined
-        # input from user
-        choice = (input
-(
-            f""" {lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{menu_number}{lc}]
- {lc}└─{lc}> {reset}""").lower()
-)
-        # checks input e.g if input is c execute credits function
+
         try:
-            if choice in ['n', 'next', 'menunext', 'menu_next']:
-                return
-            if choice in ['back', 'b', 'menubefore', 'menu_back']:
-                return
-            if '$' in choice:
-                new_choice = choice.replace('$', '')
-                # Now use the cleaned input
-                os.system(new_choice.strip())
-                input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                return
-            if choice in ['c', 'credits', 'creds']:
-                Slow(MainColor(
-                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                Credits()
-                Slow(MainColor(
-                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                return
-            if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
-                os.system(r'python me\\cyan\\app\\settings\\cyantaskbgremove.py')
-                sys.exit()
-                return
-            # script path for all my modules
-            script_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "features"))
-            # execute option entered condition
-            if choice in self.options and self.options[choice]:
-                script_path = os.path.join(script_folder, f"{self.options[choice]}.py")
+            with open(self.menu_path, "r") as file:
+                self.menu_number = file.read()
+            menu_mapping = {"1": Menu().menu1, "2": Menu().menu2}
+            self.menu = menu_mapping.get(self.menu_number, Menu().menu1)
+        except:
+            self.menu = Menu().menu1
+            self.menu_number = "1"
 
-                if os.path.exists(script_path):
-                    os.system(f"python \"{script_path}\"")
+        while True:
+            os.system('cls')
+            Banner()
+            Slow(MainColor(Menu().menu_number))
+            choice = (input
+                          (
+                          f""" {lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{self.menu_number}{lc}]
+ {lc}└─{lc}> {reset}""").lower()
+                      )
+            # checks input e.g if input is c execute credits function
+            try:
+                if choice in ['n', 'next', 'menunext', 'menu_next']:
+                    menu_number = {"1": "2", "2": "3", "3": "1"}.get(self.menu_number, "1")
+                    with open(self.menu_path, "w") as file:
+                        file.write(menu_number)
+                    continue
+                    return
+
+                elif choice in ['back', 'b', 'menubefore', 'menu_back']:
+                    menu_number = {"2": "1", "3": "2"}.get(self.menu_number, "1")
+                    with open(self.menu_path, "w") as file:
+                        file.write(menu_number)
+                    continue
+                    return
+                if '$' in choice:
+                    new_choice = choice.replace('$', '')
+                    # Now use the cleaned input
+                    os.system(new_choice.strip())
+                    input(
+                        f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                    return
+                if choice in ['c', 'credits', 'creds']:
+                    Slow(MainColor(
+                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                    Credits()
                     Slow(MainColor(
                         '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     input(
                         f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                    return
+                if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
+                    os.system(r'python me\\cyan\\app\\settings\\cyantaskbgremove.py')
+                    sys.exit()
+                    return
+                # script path for all my modules
+                script_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "features"))
+                # execute option entered condition
+                if choice in self.options and self.options[choice]:
+                    script_path = os.path.join(script_folder, f"{self.options[choice]}.py")
+
+                    if os.path.exists(script_path):
+                        os.system(f"python \"{script_path}\"")
+                        Slow(MainColor(
+                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                        input(
+                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                    else:
+                        Slow(MainColor(
+                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                        print(f"{red}Error: {blue}{script_path} {red}not found! -_-")
+                        Slow(MainColor(
+                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                        input(
+                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)  # if file not found
+
+                elif '0' + choice in self.options and self.options['0' + choice]:  # if option entered starts with 0
+                    script_path = os.path.join(script_folder, f"{self.options['0' + choice]}.py")
+
+                    if os.path.exists(script_path):
+                        Slow(MainColor(
+                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                        os.system(f"python \"{script_path}\"")
+                        Slow(MainColor(
+                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                        input(
+                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                    else:
+
+                        print(f"Error: {script_path} not found!")
+                        input(
+                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)  # if not found
+
                 else:
-                    Slow(MainColor(
-                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                    print(f"{red}Error: {blue}{script_path} {red}not found! -_-")
-                    Slow(MainColor(
-                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                    input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)# if file not found
 
-            elif '0' + choice in self.options and self.options['0' + choice]:  # if option entered starts with 0
-                script_path = os.path.join(script_folder, f"{self.options['0' + choice]}.py")
+                    Slow(MainColor(f"""┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃
+                           \n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !""" + reset))
+                    time.sleep(1)
 
-                if os.path.exists(script_path):
-                    Slow(MainColor(
-                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                    os.system(f"python \"{script_path}\"")
-                    Slow(MainColor(
-                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                    input(
-                        f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                else:
+                # error
+            # Prints error message e.g a filepath is not found in code or could not find a specific module.
+            except Exception as e:
+                Slow(MainColor(
+                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+                input(f"Error: {e}")
 
-                    print(f"Error: {script_path} not found!")
-                    input(f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)# if not found
 
-            else:
 
-               Slow(MainColor(f"""┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃
-               \n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !""" + reset))
-               time.sleep(1)
-
-              # error
-        # Prints error message e.g a filepath is not found in code or could not find a specific module.
-        except Exception as e:
-            Slow(MainColor(
-                '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-            input(f"Error: {e}")
