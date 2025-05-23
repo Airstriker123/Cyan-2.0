@@ -13,7 +13,7 @@ lc = Fore.LIGHTCYAN_EX
 grey = Fore.LIGHTBLACK_EX
 BEFORE_CYAN= f'{cyan + white}'
 purple = Fore.MAGENTA
-aqua = Fore.LIGHTCYAN_EX
+orange = '\033[38;5;208m'
 
 __version__ = '0.4.6'
 

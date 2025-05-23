@@ -40,12 +40,16 @@ class Menu:
         self.option_29 = "System info"
         self.option_30 = "Wifi Troubleshooter"
         self.option_31 = "shutdown computer"
+        self.option_32 = "Ai dectector (ai percentage)"
+        self.option_33 = "Google docs auto complete work (ai)"
+        self.option_34 = "Smart Research Summarizer"
 
 
         # Additional menu options
         self.option_next = f"{green}Next"
         self.option_site = "Credits"
         self.option_back = f"{red}back"
+        self.option_settings = f"{yellow}[Settings]"
 
         # Formatting the options for display in the menu
         # Using ANSI color codes (cyan and white) to style the text
@@ -80,12 +84,16 @@ class Menu:
         self.option_28_txt = f"{cyan}[{white}28{cyan}]{white} " + self.option_28
         self.option_29_txt = f"{cyan}[{white}29{cyan}]{white} " + self.option_29
         self.option_30_txt = f"{cyan}[{white}30{cyan}]{white} " + self.option_30
-        self.option_31_txt = f"{cyan}[{white}30{cyan}]{white} " + self.option_31
+        self.option_31_txt = f"{cyan}[{white}31{cyan}]{white} " + self.option_31
+        self.option_32_txt = f"{cyan}[{white}32{cyan}]{white} " + self.option_32
+        self.option_33_txt = f"{cyan}[{white}33{cyan}]{white} " + self.option_33
+        self.option_34_txt = f"{cyan}[{white}34{cyan}]{white} " + self.option_34
 
         # Formatting special options
         self.option_next_txt = self.option_next + f" {cyan}[{green}N{cyan}]{white}"
         self.option_site_txt = f"{cyan}[{yellow}C{cyan}]{white} " + self.option_site
         self.option_back_txt= f"{cyan}[{red}B{cyan}]{white} " + self.option_back
+        self.option_settings_txt= f"{cyan}[{yellow}S{cyan}]{white} " + self.option_settings
 
 
         # menu display
@@ -105,14 +113,14 @@ class Menu:
 
         self.menu2 = f"""█┣━{self.option_back_txt}                                                                                                  {self.option_next_txt}┣━█
 ┃                                                                                                                      ┃
-┗━━█░───────┤{purple}[Automation]├────────░█───────┤{red}[System tools]├────────░█━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-   ┃                               ┃
-   ┣━${self.option_20_txt}        ┣━{self.option_26_txt}                 
-   ┣━${self.option_21_txt}       ┣━{self.option_27_txt}
-   ┣━${self.option_22_txt}    ┣━{self.option_28_txt}
-   ┣━${self.option_23_txt}    ┣━{self.option_29_txt}
-   ┣━${self.option_24_txt}   ┣━{self.option_30_txt}
-   ┣━${self.option_25_txt}   ┣━{self.option_31_txt}   
+┗━░█░───────┤{purple}[Automation]├────────░█░────────┤{red}[System tools]├─────────░█░────────┤{orange}[Ai tools]├──────────────░█░━━━━━━━━━░
+   ┃                               ┃                                   ┃                                               █
+   ┣━${self.option_20_txt}        ┣━{self.option_26_txt}   ┃                                               ┃
+   ┣━${self.option_21_txt}       ┣━{self.option_27_txt}         ┗━━━█────────────────────────────#{self.option_settings_txt}┛
+   ┣━${self.option_22_txt}    ┣━{self.option_28_txt}           ┃
+   ┣━${self.option_23_txt}    ┣━{self.option_29_txt}                      ┣━{self.option_32_txt}
+   ┣━${self.option_24_txt}   ┣━{self.option_30_txt}              ┣━{self.option_33_txt}
+   ┣━${self.option_25_txt}   ┣━{self.option_31_txt}                ┣━{self.option_34_txt}
         
 """
 
