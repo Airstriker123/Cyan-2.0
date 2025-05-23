@@ -115,7 +115,6 @@ class AppIo(object
     # Get the current time formatted as HH:MM:SS
     def current_time_hour(self):
         return datetime.datetime.now().strftime('%H:%M:%S')
-
     def __init__(self, choice
                  ):
         self.menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
@@ -138,13 +137,31 @@ class AppIo(object
         self.option_17 = "Physics Formula Sheet"
         self.option_18 = "Spelling & Grammar Check"  # Uses an API
         self.option_19 = "Recommended Study Websites"
-        self.options = \
-        {
-                '01': self.option_01, '02': self.option_02, '03': self.option_03, '04': self.option_04,
-                '05': self.option_05, '06': self.option_06, '07': self.option_07, '08': self.option_08,
-                '09': self.option_09, '10': self.option_10, '11': self.option_11, '12': self.option_12,
-                '13': self.option_13, '14': self.option_14, '15': self.option_15, '16': self.option_16,
-                '17': self.option_17, '18': self.option_18, '19': self.option_19,
+        self.option_20 = "Clear temp files"
+        self.option_21 = "Empty Recycle Bin"
+        self.option_22 = "Smart File Organizer"
+        self.option_23 = "Auto website startup"
+        self.option_24 = "Auto email (template)"
+        self.option_25 = "Execute custom macros"
+        self.option_26 = "Hardware Monitor (CLI HUD)"
+        self.option_27 = "Port Scanner (Local)"
+        self.option_28 = "Launch app (installed)"
+        self.option_29 = "System info"
+        self.option_30 = "Wifi Troubleshooter"
+        self.option_31 = "shutdown computer"
+        self.option_32 = "Ai dectector (ai percentage)"
+        self.option_33 = "Google docs auto complete work (ai)"
+        self.option_34 = "Smart Research Summarizer"
+        self.options = {
+            '01': self.option_01, '02': self.option_02, '03': self.option_03, '04': self.option_04,
+            '05': self.option_05, '06': self.option_06, '07': self.option_07, '08': self.option_08,
+            '09': self.option_09, '10': self.option_10, '11': self.option_11, '12': self.option_12,
+            '13': self.option_13, '14': self.option_14, '15': self.option_15, '16': self.option_16,
+            '17': self.option_17, '18': self.option_18, '19': self.option_19, '20': self.option_20,
+            '21': self.option_21, '22': self.option_22, '23': self.option_23, '24': self.option_24,
+            '25': self.option_25, '26': self.option_26, '27': self.option_27, '28': self.option_28,
+            '29': self.option_29, '30': self.option_30, '31': self.option_31, '32': self.option_32,
+            '33': self.option_33, '34': self.option_34
         }
         BEFORE = f'{red}[{white}'
         AFTER = f'{red}]'
@@ -175,11 +192,9 @@ class AppIo(object
             os.system('cls')
             Banner()
             Slow(MainColor(Menu().menu_number))
-            choice = (input
-                          (
-                          f""" {lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{self.menu_number}{lc}]
- {lc}└─{lc}> {reset}""").lower()
-                      )
+            choice = (input(f"""{lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{self.menu_number}{lc}]
+{lc}└─{lc}> {reset}"""
+                            ).lower())
             # checks input e.g if input is c execute credits function
             try:
                 if choice in ['n', 'next', 'menunext', 'menu_next']:
