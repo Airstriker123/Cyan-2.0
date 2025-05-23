@@ -183,9 +183,10 @@ class AppIo(object
             # checks input e.g if input is c execute credits function
             try:
                 if choice in ['n', 'next', 'menunext', 'menu_next']:
-                    menu_number = {"1": "2"}.get(self.menu_number, "2")
+                    menu_number = {"1": "2"}.get(self.menu_number, "1")
                     with open(self.menu_path, "w") as file:
                         file.write(menu_number)
+                    self.menu_number = menu_number
                     continue
                     return
 
@@ -193,6 +194,7 @@ class AppIo(object
                     menu_number = {"2": "1"}.get(self.menu_number, "1")
                     with open(self.menu_path, "w") as file:
                         file.write(menu_number)
+                    self.menu_number = menu_number
                     continue
                     return
                 if '$' in choice:
@@ -210,6 +212,7 @@ class AppIo(object
                         '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
                     input(
                         f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                    continue
                     return
                 if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
                     os.system(r'python me\\cyan\\app\\settings\\cyantaskbgremove.py')
