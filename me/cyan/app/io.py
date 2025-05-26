@@ -189,6 +189,7 @@ class AppIo(object
             self.menu_number = "1"
 
         while True:
+            os.system('color 4')
             os.system('cls')
             Banner()
             Slow(MainColor(Menu().menu_number))
