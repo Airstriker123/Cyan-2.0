@@ -218,6 +218,7 @@ class AppIo(object
                     os.system(new_choice.strip())
                     input(
                         f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
+                    continue
                     return
                 if choice in ['c', 'credits', 'creds']:
                     Slow(MainColor(
