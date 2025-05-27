@@ -48,7 +48,7 @@ class Menu:
 
         # Additional menu options
         self.option_next = f"{green}Next"
-        self.option_site = "Credits"
+        self.option_site = f"{yellow}Credits"
         self.option_back = f"{red}back"
         self.option_settings = f"{yellow}[Settings]"
 
