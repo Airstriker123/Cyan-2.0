@@ -1,124 +1,15 @@
+import os
 try:
-    import os
-    import sys
-    from me.cyan.app.gui.animations.colorama.__init__ import *
-    from me.cyan.app.gui.animations.style import *
-    from me.cyan.app.gui.menu import Menu
-    from me.cyan.app.gui.banner import *
-    import datetime
-    import time
-    import requests
+ from me.cyan.app.gui.animations.style import *
+ from me.cyan.app.gui.animations.colorama.__init__ import *
 except Exception as e:
-    print(e) 
-    print(f'{e}\n in: io.py')
+    print(e)
+    print('in: menu.py')
 
-# can now use $
+class Menu:
+    def __init__(self):
+        self.menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
 
-class Credits:
-        def __init__(self):
-            self.show_credits()
-        # function to submit feedback.
-
-
-
-        def show_credits(self):
-            python_ascii = f"""
-
-                                                      {cyan}█████████████████████{reset}                                          
-                                                  {cyan}████████████████████████████{reset}                                       
-                                                {cyan}████████████████████████████████{reset}                                    
-                                             {cyan} ██████      ████████████████████████{reset}                                   
-                                             {cyan}███████      ████████████████████████{reset}                                  
-                                              {cyan}██████      ████████████████████████{reset}                                  
-                                               {cyan}████████████████████████████████████{reset}                                  
-                                               {cyan}████████████████████████████████████{reset}                                  
-                                               {cyan}████████████████████████████████████{reset}                                  
-                                                                {cyan}███████████████████{reset}                                  
-                                    {cyan}██████████████████████████████████████████████{yellow} ███████████{reset}                      
-                                 {cyan}█████████████████████████████████████████████████{yellow} █████████████{reset}                    
-                               {cyan}███████████████████████████████████████████████████{yellow} ███████████████{reset}                  
-                              {cyan}████████████████████████████████████████████████████{yellow} ███████████████{reset}                  
-                             {cyan}█████████████████████████████████████████████████████{yellow} ████████████████{reset}                 
-                             {cyan}████████████████████████████████████████████████████{yellow}  ████████████████{reset}                 
-                             {cyan}█████████████████████████████████████████████████████{yellow} ██████████████████{reset}                
-                            {cyan}███████████████████████████████████████████████████{yellow}  ███████████████████{reset}                
-                            {cyan}█████████████████████████████████████████████████{yellow}   ████████████████████{reset}                
-                            {cyan}████████████████████████{yellow}                         ███████████████████████{reset}                
-                            {cyan}████████████████████{yellow}   █████████████████████████████████████████████████{reset}                
-                            {cyan}██████████████████{yellow}  ████████████████████████████████████████████████████{reset}                
-                             {cyan}█████████████████{yellow}  █████████████████████████████████████████████████████{reset}                
-                             {cyan}█████████████████{yellow} █████████████████████████████████████████████████████{reset}                 
-                             {cyan}████████████████{yellow}  █████████████████████████████████████████████████████{reset}                 
-                              {cyan}███████████████{yellow}  ████████████████████████████████████████████████████{reset}                  
-                               {cyan}█████████████{yellow}  ███████████████████████████████████████████████████{reset}                   
-                                {cyan}███████████{yellow}  ██████████████████████████████████████████████████{reset}                    
-                                  {cyan}█████████{yellow}  ███████████████████████████████████████████████{reset}                        
-                                               {yellow}██████████████████{reset}                                                    
-                                               {yellow}███████████████████████████████████{reset}                                  
-                                               {yellow}███████████████████████████████████{reset}                                  
-                                               {yellow}███████████████████████████████████{reset}                                  
-                                               {yellow}███████████████████████████     ████{reset}                                  
-                                               {yellow}███████████████████████████     ████{reset}                                  
-                                               {yellow}███████████████████████████     ████{reset}                                   
-                                                 {yellow}███████████████████████████████{reset}                                    
-                                                   {yellow}████████████████████████████{reset}                                      
-                                                      {yellow}███████████████████████{reset}                                          
-            """
-
-            Slow(python_ascii)
-            Slow(f'''
-{lc}
-╭────────────────────────────────╮
-│ Cyan - Multi-tool for Students │
-╰────────────────────────────────╯
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Developed by: {red}Airstriker{lc}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Lead Developer: {red}Airstriker{lc}
-• GitHub: {cyan}github.com/Airstriker123 🚀{lc}
-• Design & UX: {red}Airstriker {lc}
-• Programming: {red}Airsriker {lc}
-• Tested on {purple}3{lc} computers 💯
-┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ {purple}Modules Used{lc}   ┃{purple} Use{lc}                                      ┃ {purple}Link{lc}                                            ┃
-┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│ colorama       │ Color support for console text           │ https://pypi.org/project/colorama/              │
-│ pytubefix      │ Download YouTube videos (patched pytube) │ https://github.com/fent/node-ytdl-core          │
-│ pydub          │ Audio processing (conversion, editing)   │ https://github.com/jiaaro/pydub                 │
-│ ffmpeg         │ Multimedia processing (audio/video)      │ https://ffmpeg.org/                             │
-│ imageio        │ Read/write images & videos               │ https://imageio.readthedocs.io/                 │
-│ fade           │ Adds fading effects to text in CLI       │ https://pypi.org/project/fade/                  │
-│ Flask          │ Web framework for Python                 │ https://flask.palletsprojects.com/              │
-│ requests       │ Handles HTTP requests                    │ https://docs.python-requests.org/               │
-│ rich           │ Better CLI app, tables, text formatting  │ https://github.com/Textualize/rich              │
-│ PyExecJS       │ Run JavaScript from Python               │ https://pypi.org/project/PyExecJS/              │
-│ datetime       │ Handles date and time operations         │ https://docs.python.org/3/library/datetime.html │
-│ simplejson     │ Extended JSON handling                   │ https://pypi.org/project/simplejson/            │
-│ jsons          │ Serialize/deserialize JSON data          │ https://pypi.org/project/jsons/                 │
-│ pypi-json      │ Retrieve package metadata from PyPI      │ https://pypi.org/project/pypi-json/             │
-│ textblob       │ NLP (Natural Language Processing)        │ https://pypi.org/project/textblob/              │
-│ pyspellchecker │ Spell checking in Python                 │ https://pypi.org/project/pyspellchecker/        │
-│ sympy          │ Symbolic mathematics library             │ https://www.sympy.org/                          │
-└────────────────┴──────────────────────────────────────────┴─────────────────────────────────────────────────┘
-
-{lc}Thank you for using Cyan! 
-{green}Be sure to Star this project on Github!
-
-            ''')
-
-
-
-
-
-class AppIo(object
-):
-
-    # Get the current time formatted as HH:MM:SS
-    def current_time_hour(self):
-        return datetime.datetime.now().strftime('%H:%M:%S')
-    def __init__(self, choice
-                 ):
-        menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
         self.option_01 = "Google-Classroom"  # 1
         self.option_02 = "ChatGPT (Web-Version)"  # @
         self.option_03 = "GitHub"  ##@
@@ -153,141 +44,119 @@ class AppIo(object
         self.option_32 = "Ai dectector (ai percentage)"
         self.option_33 = "Google docs auto complete work (ai)"
         self.option_34 = "Smart Research Summarizer"
-        self.options = {
-            '01': self.option_01, '02': self.option_02, '03': self.option_03, '04': self.option_04,
-            '05': self.option_05, '06': self.option_06, '07': self.option_07, '08': self.option_08,
-            '09': self.option_09, '10': self.option_10, '11': self.option_11, '12': self.option_12,
-            '13': self.option_13, '14': self.option_14, '15': self.option_15, '16': self.option_16,
-            '17': self.option_17, '18': self.option_18, '19': self.option_19, '20': self.option_20,
-            '21': self.option_21, '22': self.option_22, '23': self.option_23, '24': self.option_24,
-            '25': self.option_25, '26': self.option_26, '27': self.option_27, '28': self.option_28,
-            '29': self.option_29, '30': self.option_30, '31': self.option_31, '32': self.option_32,
-            '33': self.option_33, '34': self.option_34
-        }
-        BEFORE = f'{red}[{white}'
-        AFTER = f'{red}]'
-        INFO = f'{BEFORE}!{AFTER} |'
-        username_pc = os.getlogin()
-        ERROR = f'{BEFORE}x{AFTER} |'# get pc name
 
-        try:
-            if sys.platform.startswith("win"):
-                os_name = "Windows"
-            elif sys.platform.startswith("linux"):
-                os_name = "Linux"
-            else:
-                os_name = "Unknown"
-        except Exception as e:
-            print(f'{red}error:{purple} {e}')  # Default value if the OS can't be determined
 
-        try:
-            with open(menu_path, "r") as file:
-                self.menu_number = file.read()
-            menu_mapping = {"1": Menu().menu1, "2": Menu().menu2}
-            self.menu = menu_mapping.get(self.menu_number, Menu().menu1)
-        except:
-            menu_number = "1"
-            with open(menu_path, "w") as file:
-                file.write(menu_number)
-            self.menu_number = menu_number
+        # Additional menu options
+        self.option_next = f"{green}Next"
+        self.option_site = f"{yellow}Credits"
+        self.option_back = f"{red}back"
+        self.option_settings = f"{yellow}[Settings]"
 
-        while True:
-            os.system('color 4')
-            time.sleep(0.1)
-            os.system('cls')
-            Banner()
-            Slow(MainColor(Menu().menu_number))
-            choice = (input(f"""\n{lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{self.menu_number}{lc}]
-{lc}└─{lc}> {reset}""").lower())
-            # checks input e.g if input is c execute credits function
-            try:
-                if choice in ['n', 'next', 'menunext', 'menu_next']:
-                    menu_number = {"1": "2"}.get(self.menu_number, "1")
-                    with open(menu_path, "w") as file:
-                        file.write(menu_number)
-                    self.menu_number = menu_number
-                    continue
-                    return
+        # Formatting the options for display in the menu
+        # Using ANSI color codes (cyan and white) to style the text
+        self.option_01_txt = f"{cyan}[{white}01{cyan}]{white} " + self.option_01.ljust(30)[:30].replace("-", " ")
+        self.option_02_txt = f"{cyan}[{white}02{cyan}]{white} " + self.option_02.ljust(30)[:30].replace("-", " ")
+        self.option_03_txt = f"{cyan}[{white}03{cyan}]{white} " + self.option_03.ljust(30)[:30].replace("-", " ")
+        self.option_04_txt = f"{cyan}[{white}04{cyan}]{white} " + self.option_04.ljust(30)[:30].replace("-", " ")
+        self.option_05_txt = f"{cyan}[{white}05{cyan}]{white} " + self.option_05.ljust(30)[:30].replace("-", " ")
+        self.option_06_txt = f"{cyan}[{white}06{cyan}]{white} " + self.option_06.ljust(30)[:30].replace("-", " ")
+        self.option_07_txt = f"{cyan}[{white}07{cyan}]{white} " + self.option_07.ljust(30)[:30].replace("-", " ")
+        self.option_08_txt = f"{cyan}[{white}08{cyan}]{white} " + self.option_08.ljust(30)[:30].replace("-", " ")
+        self.option_09_txt = f"{cyan}[{white}09{cyan}]{white} " + self.option_09.ljust(30)[:30].replace("-", " ")
+        self.option_10_txt = f"{cyan}[{white}10{cyan}]{white} " + self.option_10.ljust(30)[:30].replace("-", " ")
 
-                elif choice in ['back', 'b', 'menubefore', 'menu_back']:
-                    menu_number = {"2": "1"}.get(self.menu_number, "1")
-                    with open(menu_path, "w") as file:
-                        file.write(menu_number)
-                    self.menu_number = menu_number
-                    continue
-                    return
-                if '$' in choice:
-                    new_choice = choice.replace('$', '')
-                    # Now use the cleaned input
-                    os.system(new_choice.strip())
-                    input(
-                        f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                    continue
-                    return
-                if choice in ['c', 'credits', 'creds']:
-                    Slow(MainColor(
-                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                    Credits()
-                    Slow(MainColor(
-                        '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                    input(
-                        f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                    continue
-                    return
-                if choice in ['alt+f4', 'exit', 'leave', 'end', 'EXITAPP', 'exitapp']:
-                    os.system(r'python me\\cyan\\app\\settings\\cyantaskbgremove.py')
-                    sys.exit()
-                    return
-                # script path for all my modules
-                script_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "features"))
-                # execute option entered condition
-                if choice in self.options and self.options[choice]:
-                    script_path = os.path.join(script_folder, f"{self.options[choice]}.py")
+        self.option_11_txt = f"{cyan}[{white}11{cyan}]{white} " + self.option_11.ljust(30)[:30].replace("-", " ")
+        self.option_12_txt = f"{cyan}[{white}12{cyan}]{white} " + self.option_12.ljust(30)[:30].replace("-", " ")
+        self.option_13_txt = f"{cyan}[{white}13{cyan}]{white} " + self.option_13.ljust(30)[:30].replace("-", " ")
+        self.option_14_txt = f"{cyan}[{white}14{cyan}]{white} " + self.option_14.ljust(30)[:30].replace("-", " ")
+        self.option_15_txt = f"{cyan}[{white}15{cyan}]{white} " + self.option_15.ljust(30)[:30].replace("-", " ")
+        self.option_16_txt = f"{cyan}[{white}16{cyan}]{white} " + self.option_16.ljust(30)[:30].replace("-", " ")
+        self.option_17_txt = f"{cyan}[{white}17{cyan}]{white} " + self.option_17.ljust(30)[:30].replace("-", " ")
+        self.option_18_txt = f"{cyan}[{white}18{cyan}]{white} " + self.option_18.ljust(30)[:30].replace("-", " ")
+        self.option_19_txt = f"{cyan}[{white}19{cyan}]{white} " + self.option_19.ljust(30)[:30].replace("-", " ")
+        self.option_20_txt = f"{cyan}[{white}20{cyan}]{white} " + self.option_20
+        self.option_21_txt = f"{cyan}[{white}21{cyan}]{white} " + self.option_21
+        self.option_22_txt = f"{cyan}[{white}22{cyan}]{white} " + self.option_22
+        self.option_23_txt = f"{cyan}[{white}23{cyan}]{white} " + self.option_23
+        self.option_24_txt = f"{cyan}[{white}24{cyan}]{white} " + self.option_24
+        self.option_25_txt = f"{cyan}[{white}25{cyan}]{white} " + self.option_25
+        self.option_26_txt = f"{cyan}[{white}26{cyan}]{white} " + self.option_26
+        self.option_27_txt = f"{cyan}[{white}27{cyan}]{white} " + self.option_27
+        self.option_28_txt = f"{cyan}[{white}28{cyan}]{white} " + self.option_28
+        self.option_29_txt = f"{cyan}[{white}29{cyan}]{white} " + self.option_29
+        self.option_30_txt = f"{cyan}[{white}30{cyan}]{white} " + self.option_30
+        self.option_31_txt = f"{cyan}[{white}31{cyan}]{white} " + self.option_31
+        self.option_32_txt = f"{cyan}[{white}32{cyan}]{white} " + self.option_32
+        self.option_33_txt = f"{cyan}[{white}33{cyan}]{white} " + self.option_33
+        self.option_34_txt = f"{cyan}[{white}34{cyan}]{white} " + self.option_34
 
-                    if os.path.exists(script_path):
-                        os.system(f"python \"{script_path}\"")
-                        Slow(MainColor(
-                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                        input(
-                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                    else:
-                        Slow(MainColor(
-                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                        print(f"{red}Error: {blue}{script_path} {red}not found! -_-")
-                        Slow(MainColor(
-                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                        input(
-                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)  # if file not found
+        # Formatting special options
+        self.option_next_txt = self.option_next + f" {cyan}[{green}N{cyan}]{white}"
+        self.option_site_txt = f"{cyan}[{yellow}C{cyan}]{white} " + self.option_site
+        self.option_back_txt= f"{cyan}[{red}B{cyan}]{white} " + self.option_back
+        self.option_settings_txt= f"{cyan}[{yellow}S{cyan}]{white} " + self.option_settings
 
-                elif '0' + choice in self.options and self.options['0' + choice]:  # if option entered starts with 0
-                    script_path = os.path.join(script_folder, f"{self.options['0' + choice]}.py")
 
-                    if os.path.exists(script_path):
-                        Slow(MainColor(
-                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                        os.system(f"python \"{script_path}\"")
-                        Slow(MainColor(
-                            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                        input(
-                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)
-                    else:
+        # menu display
 
-                        print(f"Error: {script_path} not found!")
-                        input(
-                            f"{BEFORE + self.current_time_hour() + AFTER} {INFO} Press enter to continue -> {reset} " + reset)  # if not found
+        self.ribbon = "┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃"
+        self.menu1 = f""" ┌─{self.option_site_txt}                                                                                              {self.option_next_txt}─┐
+ ├─{self.option_back_txt  }  ┌─────────────────┐                        ┌───────┐                           ┌───────────┐            │ 
+ └─┬─────────┤ General tools   ├─────────┬──────────────┤ Study ├──────────────┬────────────┤ Utilities ├────────────┴─┃
+   │         └─────────────────┘         │              └───────┘              │            └───────────┘
+   ├─ {self.option_01_txt                }├─ {self.option_07_txt                }├─ {self.option_14_txt}
+   ├─ {self.option_02_txt                }├─ {self.option_08_txt                }├─ {self.option_15_txt}
+   ├─ {self.option_03_txt                }├─ {self.option_09_txt                }├─ {self.option_16_txt}
+   ├─ {self.option_04_txt                }├─ {self.option_10_txt                }├─ {self.option_17_txt}
+   ├─ {self.option_05_txt                }├─ {self.option_11_txt                }├─ {self.option_18_txt}
+   └─ {self.option_06_txt                }├─ {self.option_12_txt                }└─ {self.option_19_txt}
+                                         └─ {self.option_13_txt                }
+{self.ribbon}"""
 
-                else:
+        self.menu2 = f"""█┣━{self.option_back_txt}                                                                                                  {self.option_next_txt}┣━█
+┃                                                                                                                      ┃
+┗━░█░───────┤{purple}[Automation]├────────░█░────────┤{red}[System tools]├─────────░█░────────┤{orange}[Ai tools]├──────────────░█░━━━━━━━━━░
+   ┃                               ┃                                   ┃                                               █
+   ┣━${self.option_20_txt}        ┣━{self.option_26_txt}   ┃                                               ┃
+   ┣━${self.option_21_txt}       ┣━{self.option_27_txt}         ┗━━━█────────────────────────────#{self.option_settings_txt}┛
+   ┣━${self.option_22_txt}    ┣━{self.option_28_txt}           ┃
+   ┣━${self.option_23_txt}    ┣━{self.option_29_txt}                      ┣━{self.option_32_txt}
+   ┣━${self.option_24_txt}   ┣━{self.option_30_txt}              ┣━{self.option_33_txt}
+   ┣━${self.option_25_txt}   ┣━{self.option_31_txt}                ┣━{self.option_34_txt}
 
-                    Slow(MainColor(f"""┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃
-                           \n{BEFORE + self.current_time_hour() + AFTER} {ERROR} Invalid Choice !""" + reset))
-                    time.sleep(1)
+{self.ribbon}"""
+        self.menu_number = self.menu1
+        with open (self.menu_path, "r") as file:
+           self.menu_number = file.read()
+           if self.menu_number == "1":
+                   self.menu_number = self.menu1
+           elif self.menu_number == "2":
+                   self.menu_number = self.menu2
+           else:
+                   self.menu_number = self.menu1
 
-                # error
-            # Prints error message e.g a filepath is not found in code or could not find a specific module.
-            except Exception as e:
-                Slow(MainColor(
-                    '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
-                input(f"Error: {e}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
