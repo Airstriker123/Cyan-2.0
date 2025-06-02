@@ -7,13 +7,14 @@ import sys
 try:
     import pygetwindow as gw
 except:
-    print('IGNORE BACKGROUND PROCESS!')
+    print('CYAN BACKGROUND PROCESS!')
     print('This terminal will close on its own!')
     os.system('pip install pygetwindow')
     import pygetwindow as gw
 
 
 '''Terminal app gif remove'''
+print('started!')
 
 image_path = os.path.abspath("").strip()
 def change_windows_terminal_background(image_path):
