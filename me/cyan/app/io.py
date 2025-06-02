@@ -185,7 +185,7 @@ class AppIo(object
             menu_mapping = {"1": Menu().menu1, "2": Menu().menu2}
             self.menu = menu_mapping.get(self.menu_number, Menu().menu1)
         except:
-            menu_number = {"1": "2"}.get(self.menu_number, "1")
+            menu_number = "1"
             with open(self.menu_path, "w") as file:
                 file.write(menu_number)
             self.menu_number = menu_number
