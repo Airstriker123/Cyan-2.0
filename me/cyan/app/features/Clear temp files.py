@@ -10,7 +10,7 @@ except:
     print(f'{blue}Installing winshell')
     os.system("pip install pywin32")
     os.system("pip install winshell")
-''')
+
     import winshell
 
 class CleanUp:
@@ -124,12 +124,9 @@ class CleanUp:
                     tempfile.gettempdir(),
                     r'C:\Windows\Temp',
                     f'{self.user_temp}',
-                    f'{self.user_downloads}'
                 ]
             else:
                 print(f'{red}Failed to delete...')
-
-
         else:
             print(f'{red}Invalid choice!')
 
