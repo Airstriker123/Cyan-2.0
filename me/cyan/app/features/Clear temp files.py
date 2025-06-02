@@ -9,6 +9,7 @@ try:
 except:
     print(f'{blue}Installing winshell')
     Slow(f'''{os.system("pip install winshell")}
+    os.system("pip install pywin32")
 ''')
     import winshell
 
