@@ -111,7 +111,7 @@ class Menu:
    ├─ {self.option_05_txt                }├─ {self.option_11_txt                }├─ {self.option_18_txt}
    └─ {self.option_06_txt                }├─ {self.option_12_txt                }└─ {self.option_19_txt}
                                          └─ {self.option_13_txt                }
-{self.ribbon}                                     """
+{self.ribbon}"""
 
         self.menu2 = f"""█┣━{self.option_back_txt}                                                                                                  {self.option_next_txt}┣━█
 ┃                                                                                                                      ┃
@@ -124,8 +124,7 @@ class Menu:
    ┣━${self.option_24_txt}   ┣━{self.option_30_txt}              ┣━{self.option_33_txt}
    ┣━${self.option_25_txt}   ┣━{self.option_31_txt}                ┣━{self.option_34_txt}
 
-{self.ribbon}
-"""
+{self.ribbon}"""
         self.menu_number = self.menu1
         with open (self.menu_path, "r") as file:
            self.menu_number = file.read()
