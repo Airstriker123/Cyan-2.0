@@ -3,10 +3,9 @@ from modules.colorama.__init__ import *
 
 def MainColor2(text):
 
-    start_color = (0, 200, 150)
-    end_color = (0, 255, 255)
-
-    num_steps = 16
+    start_color = (0, 200, 150)  # Starting color (RGB)
+    end_color = (0, 255, 255)  # Ending color (RGB)
+    num_steps = 15  # Number of gradient steps
     colors = [
         (
             start_color[0] + (end_color[0] - start_color[0]) * i // (num_steps - 1),

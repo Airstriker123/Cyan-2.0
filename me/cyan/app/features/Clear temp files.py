@@ -7,7 +7,10 @@ try:
     import ctypes
     import winshell
 except:
-    pass
+    print(f'{blue}Installing winshell')
+    Slow(f'''{os.system("pip install winshell")}
+''')
+    import winshell
 
 class CleanUp:
     def __init__(self
@@ -15,7 +18,6 @@ class CleanUp:
         user = os.getlogin()
         self.user_temp = f"C:\\Users\\{user}\\AppData\\Local\\Temp"
         self.user_downloads = f"C:\\Users\\{user}\\Downloads\\"
-        self.temp_dirs = None
         self.recycle_bin = False  # flag to optionally clear Recycle Bin
         self.banner =  MainColor2(
 """                                                                                                    
@@ -75,15 +77,14 @@ class CleanUp:
 """)
 
     def delete_options(self):
-        choice = input(Slow(f"""
+        Slow(f"""
 {red}[!] WARNING THIS IS NOT REVERSIBLE
 {yellow}Choice what to cleanup:
 {green}[1] Temp folder 
 {red}[2] Tempfolder + Downloads folder (careful if you have important files)
 {red}[3] Tempfolder + Downloads + Recylce-bin
-{yellow}[4] Tempfolder + Recycle-bin  
-        
-{lc}Your choice:->{red}""")).lower()
+{yellow}[4] Tempfolder + Recycle-bin""")
+        choice = input(f"{lc}Your choice:->{red}").lower()
 
         if choice in ["1", 'one']:
             self.temp_dirs = [
@@ -173,18 +174,25 @@ class CleanUp:
 
         Slow(f"{lc}Cleanup completed!")
 
-
+    def empty_recylce_bin(self):
+        self.delete_options()
+        if self.recycle_bin:
+            Slow(f'{lc}Emptying recycle bin')
+            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
+            Slow(f'{green}Done!')
+            Slow(MainColor2(
+                '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
 
     @staticmethod
     def main():
         Clean = CleanUp()
+        Slow(MainColor2(
+            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
         Slow(CleanUp().banner)
-        Clean.delete_options()
+        Slow(MainColor2(
+            '┃┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃┃'))
+        Clean.empty_recylce_bin()
         Clean.cleanup()
-        if recycling_bin:
-            Slow(f'{lc}Emptying recycle bin')
-            winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
-            Slow(f'{green}Done!')
 
 CleanUp().main()
 
