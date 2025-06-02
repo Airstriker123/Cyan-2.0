@@ -158,8 +158,8 @@ class CleanUp:
         try:
             ctypes.windll.shell32.SHEmptyRecycleBinW(None, None, 1)
             Slow(f"{green}Recycle Bin emptied.")
-        except Exception as e:
-            Slow(f"{red}Failed to empty Recycle Bin: {e}")
+        except:
+            Slow(f"{red}Failed to empty Recycle Bin")
 
     def cleanup(self):
         Slow(f"{purple}Starting cleanup...")
