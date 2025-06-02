@@ -195,7 +195,7 @@ class AppIo(object
             os.system('cls')
             Banner()
             Slow(MainColor(Menu().menu_number))
-            choice = (input(f"""{lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{self.menu_number}{lc}]
+            choice = (input(f"""\n{lc}┌──({purple}{username_pc}{lc}@cyan2.0{lc})─{lc}[{red}~/{os_name}/Menu-{self.menu_number}{lc}]
 {lc}└─{lc}> {reset}""").lower())
             # checks input e.g if input is c execute credits function
             try:
