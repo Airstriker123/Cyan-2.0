@@ -30,6 +30,7 @@ class Main:
     def get_run_status():
         '''check if first time run script was opened before'''
         # if welcome_complete does not exist in path welcome user to app
+        os.system(r'start me\cyan\app\settings\cyantaskbg.pyw')
         if not os.path.exists(welcome_flag_path):
             first_time_run()
             with open(welcome_flag_path, "w") as file:
