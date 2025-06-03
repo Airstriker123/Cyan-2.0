@@ -107,7 +107,7 @@ class CleanUp:
         elif choice in ["3", 'three']:
             confirm = input(f'{yellow}Are you sure? [y/n]').lower()
             if confirm in ['y', 'yes']:
-                self.recycle_bin = False
+                self.recycle_bin = True
                 self.temp_dirs = [
                     tempfile.gettempdir(),
                     r'C:\Windows\Temp',
