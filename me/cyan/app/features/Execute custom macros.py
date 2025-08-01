@@ -16,7 +16,7 @@ class menu:
     def __init__(self
                  ):
         #banner
-        print(MainColor2(f"""                                                           
+        Slow(MainColor2(f"""                                                           
                       ▄▄▄▄███▄▄▄▄      ▄████████  ▄████████    ▄████████  ▄██████▄     ▄████████ 
                     ▄██▀▀▀███▀▀▀██▄   ███    ███ ███    ███   ███    ███ ███    ███   ███    ███ 
                     ███   ███   ███   ███    ███ ███    █▀    ███    ███ ███    ███   ███    █▀  
@@ -28,7 +28,7 @@ class menu:
                                                               ███    ███                                                 
         {reset}"""))
 #menu
-        print(MainColor2(f"""
+        Slow(MainColor2(f"""
                             {green}[1] - {red}[Auto typer] |--> {MainColor2("(auto types text from input works for docs)")} 
 """))
 
@@ -49,11 +49,15 @@ class Macro:
         sleep = float(input('enter delay in ms (e.g 0.1=100ms):->'))
         text = scanner_input
         print("Switch to Google Docs and place your cursor in the document. Typing will start in 5 seconds...")
-        time.sleep(5)  # 5 seconds until macro starts
-
+        time.sleep(4.999)  # 5 seconds until macro starts
+        Slow(f"{green}typing: {green}{text}")
         for line in text.split("\n"):
-            pyautogui.write(line, interval=sleep)
-            pyautogui.press("enter")
+            try:
+                pyautogui.write(line, interval=sleep)
+                pyautogui.press("{enter")
+            except:
+                Slow(f"{red}Failed to type: {purple}{line}")
+
         input("Typing complete!")
 
 
