@@ -39,6 +39,7 @@ class EmptyRecycleBin:
         except:
             Slow(f"{red}Failed to empty Recycle Bin")
 
-
-
 EmptyRecycleBin()
+
+
+
