@@ -21,3 +21,7 @@ from pytubefix.contrib.channel import Channel
 from pytubefix.contrib.search import Search
 from pytubefix.info import info
 from pytubefix.buffer import Buffer
+
+
+class YouTube:
+    pass

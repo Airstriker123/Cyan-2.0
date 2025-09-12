@@ -1,7 +1,12 @@
-import webbrowser
-from style import *
-import time
-
+import os
+try:
+    from style import *
+    import webbrowser
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+    import webbrowser
 
 gpt = MainColor2(r"""
                                                                          

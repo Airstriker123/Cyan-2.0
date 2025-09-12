@@ -17,7 +17,7 @@ except Exception as e:
 class Credits:
         def __init__(self):
             self.show_credits()
-        # function to submit feedback.
+
 
 
 

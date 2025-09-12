@@ -1,8 +1,19 @@
-from style import *
-import json  #json writing
-import requests #web requests/packets
-import time
-import sys
+import os
+try:
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import sys
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import sys
+
 
 #animation
 

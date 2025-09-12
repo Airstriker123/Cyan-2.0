@@ -1,5 +1,4 @@
 import os
-import sys
 try:
     from style import *
     import shutil

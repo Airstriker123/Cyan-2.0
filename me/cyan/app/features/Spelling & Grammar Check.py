@@ -1,6 +1,22 @@
-import requests  # For making HTTP requests to the LanguageTool API
-from spellchecker import SpellChecker  # 99% of work for spelling checking
-from style import *
+import os
+try:
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import webbrowser  # to open links
+    import sys
+    from spellchecker import SpellChecker  # 99% of work for spelling checking
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import sys
+    import webbrowser  # to open links
+    from spellchecker import SpellChecker  # 99% of work for spelling checking
 import time  # To create delays for the 'Slow' function
 
 

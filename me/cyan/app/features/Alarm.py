@@ -1,7 +1,12 @@
-from style import *
 import os
-import webbrowser
-import time
+try:
+    from style import *
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+
+
 
 
 #banner

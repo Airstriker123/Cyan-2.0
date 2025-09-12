@@ -1,10 +1,20 @@
 import os
-import sys
-import time
 try:
     from style import *
-except Exception as e:
-    print(f'Error: {e}')
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import webbrowser  # to open links
+    import sys
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import sys
+    import webbrowser  # to open links
 
 
 class SmartFileOrganizer:

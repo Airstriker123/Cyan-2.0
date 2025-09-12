@@ -1,9 +1,20 @@
-import webbrowser
-from style import *
-import sys
-import requests
-import json
-import time
+import os
+try:
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    from sys import exit
+    import webbrowser
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import time
+    import sys
+    import webbrowser
 """
 if you need comments check essay structure guide this is same code
 """
@@ -144,6 +155,6 @@ if x in ['1', 'one', 'first']:
 elif x in ['2', 'two', 'second']:
     AI()  # Use the AI service to generate flashcards
 elif x in ['3', 'three', 'ThREE', 'exit']:
-    sys.exit()  # Exit the program
+    exit()  # Exit the program
 else:
     print(f'{red}INVALID OPTION FOR FLASHCARDS!')  # Handle invalid input

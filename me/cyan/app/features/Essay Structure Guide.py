@@ -1,7 +1,17 @@
-from style import *
-import webbrowser
 import sys
-import time
+import os
+try:
+    from style import *
+    import webbrowser
+    import sys
+
+except ImportError as e:
+    print(f"installing modules")
+    os.system(r"pip install -r packages.txt")
+    from style import *
+    import json  # json writing
+    import requests  # web requests/packets
+    import sys
 
 
 
