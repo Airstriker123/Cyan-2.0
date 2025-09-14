@@ -1,1 +1,1 @@
-In progress
+no custom installs required + faster load times!
