@@ -13,7 +13,6 @@ except ImportError as e:
     os.system(r'pip install -r me\app\settings\packages.txt')
 
 
-
 os.system('title Cyan2.0')
 #background tasks
 os.system(r'start me\cyan\app\settings\cyantaskbg.pyw')
