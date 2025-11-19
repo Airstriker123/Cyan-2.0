@@ -1,0 +1,73 @@
+name: Sync Commits to GitHub Project
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  workflow_dispatch:
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Get commit information
+        id: commit-info
+        run: |
+          COMMIT_TITLE=$(git log -1 --pretty=format:%s)
+          COMMIT_AUTHOR=$(git log -1 --pretty=format:%an)
+          COMMIT_DATE=$(git log -1 --pretty=format:%ci)
+          COMMIT_SHA=$(git log -1 --pretty=format:%h)
+          
+          echo "title=${COMMIT_TITLE}" >> $GITHUB_OUTPUT
+          echo "author=${COMMIT_AUTHOR}" >> $GITHUB_OUTPUT
+          echo "date=${COMMIT_DATE}" >> $GITHUB_OUTPUT
+          echo "sha=${COMMIT_SHA}" >> $GITHUB_OUTPUT
+      
+      - name: Add commit to project
+        uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/users/Airstriker123/projects/1
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          labeled: commit-tracking
+          label-operator: OR
+        continue-on-error: true
+      
+      - name: Create issue for commit (alternative)
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const commitTitle = '${{ steps.commit-info.outputs.title }}';
+            const commitAuthor = '${{ steps.commit-info.outputs.author }}';
+            const commitDate = '${{ steps.commit-info.outputs.date }}';
+            const commitSha = '${{ steps.commit-info.outputs.sha }}';
+            
+            const body = `
+            ### Commit Details
+            - **SHA**: ${commitSha}
+            - **Author**: ${commitAuthor}
+            - **Date**: ${commitDate}
+            - **Branch**: ${context.ref.replace('refs/heads/', '')}
+            
+            This issue was automatically created to track commit progress.
+            `;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Commit] ${commitTitle}`,
+              body: body,
+              labels: ['commit-tracking', 'automated']
+            });
