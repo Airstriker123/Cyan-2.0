@@ -27,3 +27,6 @@ Thumbs.db
 /tmp/
 *.tmp
 *.log
+/me/cyan/app/features/modules/colorama/__pycache__
+/me/cyan/app/features/modules/colorama/__pycache__
+me/cyan/app/settings/Welcome_complete.txt

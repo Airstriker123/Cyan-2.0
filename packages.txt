@@ -1,5 +1,4 @@
 altgraph==0.17.4
-auto-py-to-exe==2.46.0
 beautifulsoup4==4.13.4
 bottle==0.13.3
 bottle-websocket==0.2.9
@@ -28,10 +27,7 @@ pefile==2023.2.7
 pillow==11.2.1
 PyAutoGUI==0.9.54
 pycparser==2.22
-pygame==2.6.1
 PyGetWindow==0.0.9
-pyinstaller==6.14.0
-pyinstaller-hooks-contrib==2025.4
 PyMsgBox==1.0.9
 pyparsing==3.2.3
 pyperclip==1.9.0
@@ -42,7 +38,6 @@ pytweening==1.2.0
 pywin32==310
 pywin32-ctypes==0.2.3
 requests==2.32.3
-setuptools==80.9.0
 six==1.17.0
 soupsieve==2.7
 sympy==1.14.0
