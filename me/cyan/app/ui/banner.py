@@ -1,7 +1,7 @@
 try:
  from random import randint
  from os import system
- from me.cyan.app.gui.animations.style import *
+ from me.cyan.app.ui.animations.style import *
 except Exception as e:
     print(e)
     print('in: banner.py')

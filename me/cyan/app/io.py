@@ -1,10 +1,10 @@
 try:
     import os
     import sys
-    from me.cyan.app.gui.animations.colorama.__init__ import *
-    from me.cyan.app.gui.animations.style import *
-    from me.cyan.app.gui.menu import Menu
-    from me.cyan.app.gui.banner import *
+    from me.cyan.app.ui.animations.colorama.__init__ import *
+    from me.cyan.app.ui.animations.style import *
+    from me.cyan.app.ui.menu import Menu
+    from me.cyan.app.ui.banner import *
     import datetime
     import time
     import requests
@@ -117,7 +117,7 @@ class AppIo(object
         return datetime.datetime.now().strftime('%H:%M:%S')
     def __init__(self, choice
                  ):
-        self.menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
+        self.menu_path = os.path.join("me", "cyan", "app", "ui", "Menu.txt")
         self.option_01 = "Google-Classroom"  # 1
         self.option_02 = "ChatGPT (Web-Version)"  # @
         self.option_03 = "GitHub"  ##@

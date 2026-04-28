@@ -1,14 +1,14 @@
 import os
 try:
- from me.cyan.app.gui.animations.style import *
- from me.cyan.app.gui.animations.colorama.__init__ import *
+ from me.cyan.app.ui.animations.style import *
+ from me.cyan.app.ui.animations.colorama.__init__ import *
 except Exception as e:
     print(e)
     print('in: menu.py')
 
 class Menu:
     def __init__(self):
-        self.menu_path = os.path.join("me", "cyan", "app", "gui", "Menu.txt")
+        self.menu_path = os.path.join("me", "cyan", "app", "ui", "Menu.txt")
 
         self.option_01 = "Google-Classroom"  # 1
         self.option_02 = "ChatGPT (Web-Version)"  # @

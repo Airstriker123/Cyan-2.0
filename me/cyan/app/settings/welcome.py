@@ -1,10 +1,10 @@
 # Import necessary modules
 import os  # For interacting with the operating system
 import sys
-from me.cyan.app.gui.animations.style import *
+from me.cyan.app.ui.animations.style import *
 from random import randint
 from os import system
-from me.cyan.app.gui.animations.colorama.__init__ import * # For system-specific parameters and functions
+from me.cyan.app.ui.animations.colorama.__init__ import * # For system-specific parameters and functions
 
 # Get the current user's login name
 name = os.getlogin()
