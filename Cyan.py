@@ -10,7 +10,7 @@ try:
 except ImportError as e:
     print(f'error: {e}')
     print('In: Cyan.py')
-    os.system(r'pip install -r me\app\settings\packages.txt')
+    os.system(r'pip install -r packages.txt')
 
 
 os.system('title Cyan2.0')
